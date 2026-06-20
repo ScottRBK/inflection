@@ -226,7 +226,7 @@ def ordinal(number: int) -> str:
 
     """
     number = abs(int(number))
-    if number % 100 in (11, 12, 13):
+    if number % 10 in (11, 12, 13):
         return "th"
     else:
         return {
