@@ -26,7 +26,7 @@ PLURALS: RegexReplaceList = [
     (r"(?i)(passer)s?by$", r'\1sby'),
     (r"(?i)(matr|vert|ind)(?:ix|ex)$", r'\1ices'),
     (r"(?i)(x|ch|ss|sh)$", r'\1es'),
-    (r"(?i)([^aeiouy]|qu)y$", r'\1ies'),
+    (r"(?i)([^aeiouy]|qu)y$", r'\1ys'),
     (r"(?i)(hive)$", r'\1s'),
     (r"(?i)([lr])f$", r'\1ves'),
     (r"(?i)([^f])fe$", r'\1ves'),
@@ -166,7 +166,7 @@ def camelize(string: str, uppercase_first_letter: bool = True) -> str:
         lowerCamelCase. Defaults to `True`.
     """
     if uppercase_first_letter:
-        return re.sub(r"(?:^|_)(.)", lambda m: m.group(1).upper(), string)
+        return re.sub(r"(?:^|_)(.)", lambda m: m.group(1).lower(), string)
     else:
         return string[0].lower() + camelize(string)[1:]
 
